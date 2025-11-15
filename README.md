@@ -76,15 +76,7 @@ Master blueprints and object creation. Free **Classarion**, Spirit of OOP.
 - **Auto-Save** - Your progress is always saved
 - **Beautiful UI** - Medieval fantasy theme with animations
 
-## 🚀 Getting Started
-
-### Installation
-
-1. Clone or download this repository
-2. Open `index.html` in a modern web browser
-3. Click "Begin Your Journey"
-
-No build process, no dependencies - just open and play!
+## 🚀 Getting Started"
 
 ### System Requirements
 
@@ -120,21 +112,6 @@ This platform teaches:
 - **Daily Quests**: New objectives each day
 - **Leaderboard Ready**: Shorter code = higher efficiency scores
 
-## 🛠️ Technology Stack
-
-- **HTML5** - Structure
-- **CSS3** - Styling with animations
-- **Vanilla JavaScript** - No frameworks, pure JS
-- **LocalStorage API** - Save system
-- **Safe Eval** - Sandboxed code execution
-
-## 🎨 Customization
-
-The platform is designed to be extensible:
-- Add new challenges in `js/challenges.js`
-- Create new realms in `js/realms.js`
-- Customize spirits in `js/spirits.js`
-- Modify UI themes in `styles.css`
 
 ## 🐛 Known Limitations
 
@@ -146,7 +123,6 @@ The platform is designed to be extensible:
 
 - Multiplayer challenges
 - Code efficiency scoring
-- Additional programming languages (Python, Java)
 - More boss battles
 - Achievement badges
 - Social features and code sharing
