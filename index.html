@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Code Kingdom Quest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="screen active">
+        <div class="loading-content">
+            <h1 class="glitch-title">⚔️ CODE KINGDOM QUEST ⚔️</h1>
+            <p class="subtitle">A vast kingdom once powered by pure logic has fallen into glitchy twilight...</p>
+            <button id="startGameBtn" class="btn-primary glow">Begin Your Journey</button>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="gameContainer" class="screen">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="player-info">
+                <div class="player-title">
+                    <span id="playerTitle">Apprentice of Order</span>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-icon">✨</span>
+                        <span id="syntaxFragments">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">🧿</span>
+                        <span id="spiritsFreed">0</span>/6
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="playerLevel">1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="kingdom-name">
+                <h1>Code Kingdom</h1>
+            </div>
+            <div class="header-actions">
+                <button id="inventoryBtn" class="btn-icon" title="Inventory">🎒</button>
+                <button id="spellbookBtn" class="btn-icon" title="Spellbook">📖</button>
+                <button id="questsBtn" class="btn-icon" title="Daily Quests">📜</button>
+            </div>
+        </header>
+
+        <!-- Realm Map View -->
+        <div id="realmMap" class="realm-map active-view">
+            <h2 class="section-title">Realms of the Kingdom</h2>
+            <div class="realms-grid">
+                <div class="realm-card" data-realm="0">
+                    <div class="realm-icon">🔮</div>
+                    <h3>Realm of Variables</h3>
+                    <p class="realm-subtitle">The Origin Fields</p>
+                    <div class="realm-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/5 Challenges</span>
+                    </div>
+                    <span class="realm-status locked">🔒</span>
+                </div>
+
+                <div class="realm-card" data-realm="1">
+                    <div class="realm-icon">⛰️</div>
+                    <h3>Valley of Conditions</h3>
+                    <p class="realm-subtitle">The If-Cliffs</p>
+                    <div class="realm-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/5 Challenges</span>
+                    </div>
+                    <span class="realm-status locked">🔒</span>
+                </div>
+
+                <div class="realm-card" data-realm="2">
+                    <div class="realm-icon">🌀</div>
+                    <h3>Loop Dungeons</h3>
+                    <p class="realm-subtitle">The Endless Halls</p>
+                    <div class="realm-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/6 Challenges</span>
+                    </div>
+                    <span class="realm-status locked">🔒</span>
+                </div>
+
+                <div class="realm-card" data-realm="3">
+                    <div class="realm-icon">🌳</div>
+                    <h3>Forest of Functions</h3>
+                    <p class="realm-subtitle">The Awakening Grove</p>
+                    <div class="realm-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/5 Challenges</span>
+                    </div>
+                    <span class="realm-status locked">🔒</span>
+                </div>
+
+                <div class="realm-card" data-realm="4">
+                    <div class="realm-icon">📊</div>
+                    <h3>Arrays & List Plains</h3>
+                    <p class="realm-subtitle">The Sequence Steppe</p>
+                    <div class="realm-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/5 Challenges</span>
+                    </div>
+                    <span class="realm-status locked">🔒</span>
+                </div>
+
+                <div class="realm-card" data-realm="5">
+                    <div class="realm-icon">🏰</div>
+                    <h3>OOP Highlands</h3>
+                    <p class="realm-subtitle">The Class Citadel</p>
+                    <div class="realm-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/6 Challenges</span>
+                    </div>
+                    <span class="realm-status locked">🔒</span>
+                </div>
+            </div>
+
+            <!-- Spirit Companions Display -->
+            <div class="spirits-showcase">
+                <h3>Your Spirit Companions</h3>
+                <div class="spirits-list" id="spiritsList">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Challenge View -->
+        <div id="challengeView" class="challenge-view">
+            <button id="backToMapBtn" class="btn-back">← Back to Map</button>
+            
+            <div class="challenge-container">
+                <div class="challenge-story">
+                    <h2 id="challengeTitle">Challenge Title</h2>
+                    <div id="challengeStory" class="story-text">
+                        Challenge story and description...
+                    </div>
+                    <div id="challengeObjective" class="objective">
+                        <strong>Objective:</strong> <span id="objectiveText"></span>
+                    </div>
+                    
+                    <!-- Hints Section -->
+                    <div class="hints-section">
+                        <button id="hintBtn" class="btn-hint">💡 Need a Hint?</button>
+                        <div id="hintText" class="hint-text hidden"></div>
+                    </div>
+
+                    <!-- Test Cases Display -->
+                    <div class="test-cases">
+                        <h4>Test Cases:</h4>
+                        <div id="testCasesList"></div>
+                    </div>
+                </div>
+
+                <div class="challenge-workspace">
+                    <div class="editor-header">
+                        <span>✨ Your Spellbook</span>
+                        <button id="runCodeBtn" class="btn-run">▶ Cast Spell</button>
+                    </div>
+                    <textarea id="codeEditor" class="code-editor" spellcheck="false"></textarea>
+                    
+                    <div class="output-section">
+                        <div class="output-header">
+                            <span>🔮 Spell Results</span>
+                            <button id="clearOutputBtn" class="btn-clear">Clear</button>
+                        </div>
+                        <div id="outputDisplay" class="output-display"></div>
+                    </div>
+
+                    <div class="challenge-actions">
+                        <button id="resetCodeBtn" class="btn-secondary">Reset Code</button>
+                        <button id="submitSolutionBtn" class="btn-primary glow">Submit Solution</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boss Battle View -->
+        <div id="bossView" class="boss-view">
+            <div class="boss-container">
+                <div class="boss-header">
+                    <h2 id="bossName">Boss Name</h2>
+                    <div class="boss-health">
+                        <div class="health-bar">
+                            <div id="bossHealthFill" class="health-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="boss-arena" id="bossArena">
+                    <!-- Boss battle specific UI -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="victoryModal" class="modal">
+            <div class="modal-content victory">
+                <h2>🎉 Victory!</h2>
+                <div id="victoryMessage"></div>
+                <div class="rewards" id="rewardsDisplay"></div>
+                <button id="continueBtn" class="btn-primary">Continue</button>
+            </div>
+        </div>
+
+        <div id="spiritModal" class="modal">
+            <div class="modal-content spirit-freed">
+                <h2>🧿 Spirit Freed!</h2>
+                <div class="spirit-display">
+                    <div id="spiritIcon" class="spirit-icon-large"></div>
+                    <h3 id="spiritName"></h3>
+                    <p id="spiritDescription"></p>
+                    <div id="spiritAbility" class="spirit-ability"></div>
+                </div>
+                <button id="closeSpiritModal" class="btn-primary">Accept</button>
+            </div>
+        </div>
+
+        <div id="questsModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeQuestsModal">×</button>
+                <h2>📜 Daily Quests</h2>
+                <div id="questsList" class="quests-list"></div>
+            </div>
+        </div>
+
+        <div id="inventoryModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeInventoryModal">×</button>
+                <h2>🎒 Inventory</h2>
+                <div id="inventoryGrid" class="inventory-grid"></div>
+            </div>
+        </div>
+
+        <div id="spellbookModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeSpellbookModal">×</button>
+                <h2>📖 Spellbook</h2>
+                <div id="spellbookContent" class="spellbook-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/realms.js"></script>
+    <script src="js/challenges.js"></script>
+    <script src="js/bossBattles.js"></script>
+    <script src="js/spirits.js"></script>
+    <script src="js/codeValidator.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

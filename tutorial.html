@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Kingdom Quest - Tutorial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #f3f4f6;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(26, 31, 58, 0.8);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #8b5cf6, #3b82f6, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            color: #8b5cf6;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8b5cf6;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #3b82f6;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .feature-card h4 {
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: #10b981;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .code-block {
+            background: #0d1117;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border: 1px solid #374151;
+        }
+        
+        .code-block pre {
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .realm-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            margin: 0.25rem;
+            border: 1px solid #8b5cf6;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .highlight {
+            background: rgba(251, 191, 36, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 CODE KINGDOM QUEST 🌟</h1>
+        <p class="center" style="font-size: 1.2rem; margin-bottom: 2rem;">
+            <em>Your Ultimate Guide to Becoming the Grand Architect of Order</em>
+        </p>
+
+        <div class="center">
+            <a href="index.html" class="btn">🎮 Start Your Adventure</a>
+        </div>
+
+        <h2>📖 The Story</h2>
+        <p>
+            A vast kingdom once powered by pure logic has fallen into glitchy twilight. 
+            Bugs now crawl across its lands, corrupting logic-spirits who once kept the kingdom alive.
+            You are chosen as the <strong>Apprentice of Order</strong>, armed with a spellbook that speaks in code.
+        </p>
+        <p>
+            Your mission: Restore the lost logic concept by concept. 
+            Every concept you master frees a trapped spirit and pushes back the corruption.
+        </p>
+
+        <h2>🎯 How to Play</h2>
+        <ol>
+            <li><strong>Choose a Realm</strong> - Start with the Realm of Variables (only unlocked realm at first)</li>
+            <li><strong>Read the Challenge</strong> - Each challenge tells a story and gives you an objective</li>
+            <li><strong>Write Your Code</strong> - Use the interactive code editor to solve the puzzle</li>
+            <li><strong>Test Your Solution</strong> - Click "Cast Spell" to run your code and see results</li>
+            <li><strong>Need Help?</strong> - Click "💡 Need a Hint?" for guidance</li>
+            <li><strong>Submit</strong> - When all tests pass, submit to complete the challenge</li>
+            <li><strong>Collect Rewards</strong> - Earn Syntax Fragments ✨ and Experience ⭐</li>
+            <li><strong>Free Spirits</strong> - Complete all challenges in a realm to free its spirit!</li>
+        </ol>
+
+        <h2>🏰 The Six Realms</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>🔮 Realm of Variables</h4>
+                <p>Learn to store and manipulate data</p>
+                <div>
+                    <span class="realm-badge">Variables</span>
+                    <span class="realm-badge">Data Types</span>
+                    <span class="realm-badge">Assignment</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h4>⛰️ Valley of Conditions</h4>
+                <p>Master decision-making logic</p>
+                <div>
+                    <span class="realm-badge">If/Else</span>
+                    <span class="realm-badge">Booleans</span>
+                    <span class="realm-badge">Logic</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h4>🌀 Loop Dungeons</h4>
+                <p>Control repetition and iteration</p>
+                <div>
+                    <span class="realm-badge">For Loops</span>
+                    <span class="realm-badge">While Loops</span>
+                    <span class="realm-badge">Break</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h4>🌳 Forest of Functions</h4>
+                <p>Create reusable code spells</p>
+                <div>
+                    <span class="realm-badge">Functions</span>
+                    <span class="realm-badge">Parameters</span>
+                    <span class="realm-badge">Return</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h4>📊 Arrays & List Plains</h4>
+                <p>Command collections of data</p>
+                <div>
+                    <span class="realm-badge">Arrays</span>
+                    <span class="realm-badge">Lists</span>
+                    <span class="realm-badge">Iteration</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h4>🏰 OOP Highlands</h4>
+                <p>Master blueprints and objects</p>
+                <div>
+                    <span class="realm-badge">Classes</span>
+                    <span class="realm-badge">Objects</span>
+                    <span class="realm-badge">Methods</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>🧿 Spirit Companions</h2>
+        <p>Free these six legendary spirits by completing their realms:</p>
+        <ul>
+            <li><strong>Valorine</strong> 🔮 - Spirit of Variables (Inventory Boost)</li>
+            <li><strong>Condor</strong> ⛰️ - Spirit of Conditions (Hint Navigation)</li>
+            <li><strong>Luminode</strong> 🌀 - Spirit of Loops (Time Trials)</li>
+            <li><strong>Funcella</strong> 🌳 - Spirit of Functions (Spell Shortcuts)</li>
+            <li><strong>Sequora</strong> 📊 - Spirit of Arrays (Multi-Item Spellcasting)</li>
+            <li><strong>Classarion</strong> 🏰 - Spirit of OOP (Advanced Puzzles)</li>
+        </ul>
+
+        <h2>⚔️ Boss Battles</h2>
+        <p>After mastering certain realms, you'll unlock epic boss battles:</p>
+        <ul>
+            <li><strong>Bug Hydra</strong> 🐉 - Defeat repeating patterns with loops</li>
+            <li><strong>Logic Troll King</strong> 👹 - Solve boolean riddles to cross the bridge</li>
+            <li><strong>The Infinite Wraith</strong> 👻 - Break free from eternal cycles</li>
+            <li><strong>Corrupted Compiler Dragon</strong> 🐲 - The final boss! Use all your knowledge</li>
+        </ul>
+
+        <h2>💡 Tips for Success</h2>
+        <ul>
+            <li>Read the story carefully - it contains clues!</li>
+            <li>Use the hint button if you're stuck</li>
+            <li>Test your code frequently with "Cast Spell"</li>
+            <li>Start simple, then add complexity</li>
+            <li>Learn from error messages - they guide you</li>
+            <li>Complete Daily Quests for extra rewards</li>
+            <li>Your progress auto-saves!</li>
+        </ul>
+
+        <h2>🎓 Example Challenge</h2>
+        <p>Here's what a typical challenge looks like:</p>
+        
+        <h3>Challenge: The First Memory Crystal</h3>
+        <p><em>Story:</em> A glowing crystal floats before you, its surface blank and waiting...</p>
+        <p><strong>Objective:</strong> Declare a variable named crystalPower with value 100</p>
+        
+        <div class="code-block">
+            <pre>// Your spellbook editor:
+// Declare your variable here
+let crystalPower = 100;</pre>
+        </div>
+        
+        <p><strong>Test Results:</strong></p>
+        <div class="code-block">
+            <pre>✅ Test 1: crystalPower should equal 100 - PASSED
+🎉 All tests passed! Submit your solution to continue.</pre>
+        </div>
+
+        <h2>📊 Progression System</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>✨ Syntax Fragments</h4>
+                <p>Earn from challenges. Use for upgrades and cosmetics.</p>
+            </div>
+            <div class="feature-card">
+                <h4>⭐ Experience Points</h4>
+                <p>Level up to increase your title and unlock abilities.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🧿 Spirit Collection</h4>
+                <p>Free all 6 spirits to restore the kingdom.</p>
+            </div>
+            <div class="feature-card">
+                <h4>📜 Daily Quests</h4>
+                <p>Complete for bonus rewards!</p>
+            </div>
+        </div>
+
+        <h2>🎮 Features</h2>
+        <ul>
+            <li><span class="highlight">32+ Challenges</span> across 6 realms</li>
+            <li><span class="highlight">Interactive Code Editor</span> with real-time feedback</li>
+            <li><span class="highlight">Safe Sandbox</span> - Your code runs securely</li>
+            <li><span class="highlight">Progressive Learning</span> - From beginner to advanced</li>
+            <li><span class="highlight">Auto-Save</span> - Never lose progress</li>
+            <li><span class="highlight">Beautiful UI</span> - Immersive fantasy theme</li>
+            <li><span class="highlight">No Installation</span> - Runs in your browser!</li>
+        </ul>
+
+        <h2>🚀 Quick Start</h2>
+        <p>Ready to begin? Follow these steps:</p>
+        <ol>
+            <li>Click the "Start Your Adventure" button</li>
+            <li>Read the intro story</li>
+            <li>Click on the <strong>Realm of Variables</strong> (the only unlocked realm)</li>
+            <li>Complete "The First Memory Crystal" challenge</li>
+            <li>Continue through the realm to free Valorine!</li>
+        </ol>
+
+        <h2>❓ FAQ</h2>
+        <h3>Q: Is this really free?</h3>
+        <p>A: Yes! Completely free to play, no ads, no in-app purchases.</p>
+
+        <h3>Q: Do I need coding experience?</h3>
+        <p>A: No! Start from zero. The game teaches you everything step by step.</p>
+
+        <h3>Q: What programming language?</h3>
+        <p>A: JavaScript - one of the most popular languages for web development.</p>
+
+        <h3>Q: Can I reset my progress?</h3>
+        <p>A: Your progress auto-saves to your browser. Clear browser data to reset.</p>
+
+        <h3>Q: Does it work on mobile?</h3>
+        <p>A: It works but is best experienced on desktop/laptop for the code editor.</p>
+
+        <h3>Q: Can I use this in my classroom?</h3>
+        <p>A: Absolutely! It's perfect for teaching programming fundamentals.</p>
+
+        <h2>🎖️ Your Journey Begins</h2>
+        <p style="font-size: 1.1rem; margin: 2rem 0;">
+            The kingdom awaits its savior. Six spirits cry out for liberation. 
+            The Corrupted Compiler Dragon stirs in its slumber. 
+            Will you rise to become the <strong class="highlight">Grand Architect of Order</strong>?
+        </p>
+        <p style="font-size: 1.2rem; text-align: center; margin: 2rem 0;">
+            <em>"In code we trust, in logic we thrive, through bugs we fight, the kingdom survives!"</em>
+        </p>
+
+        <div class="center" style="margin: 3rem 0;">
+            <a href="index.html" class="btn">⚔️ BEGIN YOUR QUEST ⚔️</a>
+        </div>
+
+        <hr style="margin: 3rem 0; border: 1px solid #374151;">
+
+        <p class="center" style="color: #9ca3af; font-size: 0.9rem;">
+            Code Kingdom Quest © 2025 | Created for aspiring coders everywhere<br>
+            May your code be bug-free and your logic ever true! ✨
+        </p>
+    </div>
+</body>
+</html>
