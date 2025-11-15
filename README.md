@@ -78,11 +78,6 @@ Master blueprints and object creation. Free **Classarion**, Spirit of OOP.
 
 ## 🚀 Getting Started"
 
-### System Requirements
-
-- Modern web browser (Chrome, Firefox, Edge, Safari)
-- JavaScript enabled
-- LocalStorage enabled for save data
 
 ## 📖 How to Play
 
